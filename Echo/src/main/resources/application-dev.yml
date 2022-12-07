@@ -1,0 +1,32 @@
+server:
+  # 端口
+  port: 3060
+  # 项目名(项目访问路径) http://localhost:3060/....
+  servlet:
+    context-path:
+
+
+spring:
+  # Mysql 配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # mysql 8.0 ,配置Asia的原因的这样才能正确在数据库中存储国内的时间
+    url: jdbc:mysql://localhost:3306/mjcommunity?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: pengfang961220
+
+  mail:
+    host: smtp.qq.com     # 配置smtp服务器地址
+    username: 1565905154@qq.com
+    password: jgakvhihacwkijbj   # 是申请到的授权码而不是qq密码
+    port: 465   # 端口号为465或者  587
+    default-encoding: UTF-8  # 默认的邮件编码
+    # 配置SSL加密工厂
+    protocol: smtps
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+            socketFactory:
+              class: javax.net.ssl.SSLSocketFactory #SSL连接配置
